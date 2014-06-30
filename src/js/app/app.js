@@ -17,6 +17,14 @@ require("log");
 (function (BH) {
 
 	var _bannerHammer;
+	var _movejs;
+	var component; 
+
+
+	var bannerWidth =300;
+	var bannerHeight =	250;
+	var clicktroughURL = "www.tmw.co.uk";
+	var platform = "doubleClick";
 
 	BH.Supports = {
 
@@ -41,6 +49,9 @@ require("log");
 			}
 
 			_bannerHammer = require("bannerhammer");
+			
+			_bannerHammer.init(bannerWidth,bannerHeight,clicktroughURL,platform);
+
 		}
 	};
 

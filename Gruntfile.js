@@ -27,7 +27,9 @@ module.exports = function (grunt) {
 				path: libFile_bannerhammer,
 				exports: "bannerhammer"
 			}
+			
 		},
+
 
 		browserifyAliasLibFilesArray = [
 			libFile_log + ':log',
@@ -79,7 +81,9 @@ module.exports = function (grunt) {
 				options : {
 					debug: true,
 					shim: browserifyShim,
-					alias: browserifyAliasAllFilesArray
+					alias: browserifyAliasAllFilesArray,
+				
+
 				},
 
 				src: jsSrcFile,
@@ -93,6 +97,7 @@ module.exports = function (grunt) {
 					shim: browserifyShim,
 					alias: browserifyAliasAllFilesArray,
 					transform: ['uglifyify']
+
 				},
 
 				src: jsSrcFile,

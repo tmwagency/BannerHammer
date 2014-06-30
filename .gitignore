@@ -2,6 +2,9 @@
 #################################
 dist/css
 dist/js
+Off-build/
+src/js/libs/dynamicContent.js
+
 
 # TeamCity is a build add-in
 _TeamCity*
@@ -38,3 +41,4 @@ Thumbs.db
 ##########
 *.sublime-*
 .svn
+
