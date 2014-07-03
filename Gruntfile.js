@@ -115,6 +115,7 @@ module.exports = function (grunt) {
 		 */
 		sass: {
 
+
 			dev: {
 				options: {
 					unixNewlines: true,
@@ -225,7 +226,35 @@ module.exports = function (grunt) {
 					base: 'dist'
 				}
 			}
-		}
+		},
+
+	  htmlbuild: {
+        dist: {
+            src: 'src/templates/index.html',
+            dest: 'dist/output',
+            options: {
+                beautify: true,
+                prefix: '//some-cdn',
+                relative: true,
+                
+                   
+                },
+               
+                sections: {
+                  //  views: '<%= fixturesPath %>/views/**/*.html',
+                  //  templates: '<%= fixturesPath %>/templates/**/*.html',
+                 //  layout: {
+                  //      header: '<%= fixturesPath %>/layout/header.html',
+                  //      footer: '<%= fixturesPath %>/layout/footer.html'
+                   // }
+                },
+                data: {
+                    // Data to pass to templates
+                    version: "0.1.0",
+                    title: "test",
+                },
+            }
+         }
 	});
 
 
@@ -249,4 +278,7 @@ module.exports = function (grunt) {
 
 	// A task for creating a deployment build.
 	grunt.registerTask('deploy', ['browserify:deploy', 'sass:deploy', 'autoprefixer:dist', 'csso:dist']);
+
+
+
 };
