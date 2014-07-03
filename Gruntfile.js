@@ -10,6 +10,7 @@ module.exports = function (grunt) {
 		libFile_log = libsDir + "log.js",
 		libFile_swiftclick = libsDir + "swiftclick.js",
 		libFile_bannerhammer = libsDir + "bannerhammer.js",
+		libFile_enabler = libsDir + "doubleclick-enabler.js",
 
 		browserifyShim = {
 
@@ -26,15 +27,20 @@ module.exports = function (grunt) {
 			bannerhammer: {
 				path: libFile_bannerhammer,
 				exports: "bannerhammer"
+			},
+
+			enabler: {
+				path: libFile_enabler,
+				exports: "enabler"
 			}
-			
 		},
 
 
 		browserifyAliasLibFilesArray = [
 			libFile_log + ':log',
 			libFile_swiftclick + ':swiftclick',
-			libFile_bannerhammer + ':bannerhammer'
+			libFile_bannerhammer + ':bannerhammer',
+			libFile_enabler + ":enabler"
 		],
 
 		// a variable to alias app js files, allowing them to be
